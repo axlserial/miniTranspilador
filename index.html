@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transpiladorcito</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+  </head>
+  <body>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'></script>
+    
+	<nav class="navbar is-info is-mobile">
+        <div class="navbar-brand">
+			<a class="navbar-item" style="background-color: transparent;">
+				<img id="imgHome" src="IconPage.png" style="max-height: 50px" >
+			</a>
+        </div>
+		<div class="navbar-menu">
+			<div class="navbar-start">
+				<a class="navbar-item" style="background-color: transparent;">
+					<div class=" is-size-4 has-text-weight-bold is-family-monospace ">
+						Transpiladorcito
+					</div>
+				</a>
+			</div>
+		</div>
+    </nav>
+    
+	<section class="section is-centered">
+        <div class="columns is-mobile ">
+            <div class="column is-one-quarter-desktop  is-one-third-mobile">
+                <textarea id="entrada" class="textarea is-focused is-family-monospace" placeholder="Insert Instructions" style="height: 480px; "></textarea>
+                <button id="boton" class="button is-primary is-family-monospace has-text-weight-bold" style="margin-top: 10px; margin-left: 115px">
+                        <span class="icon">
+                          <i class="fas fa-arrow-right"></i>
+                        </span>
+                        <span>Run</span>
+                </button>
+            </div>
+            <div class="column is-two-thirds-desktop  is-two-thirds-mobile is-family-monospace" style="margin-top: 20px;margin-left: 80px;">
+                <span class="tag is-primary is-large" style="width: 150px;margin-bottom: 20px;">Binary</span>
+                <textarea id="salidaBin" class="textarea is-info textarea has-fixed-size"></textarea>
+                <span class="tag is-primary is-large" style="width: 150px;margin-bottom: 20px;margin-top: 50px;">Hexadecimal</span>
+                <textarea id="salidaHex" class="textarea is-info textarea has-fixed-size"></textarea>
+            </div>
+        </div>
+    </section>
+  
+	<script src="./src/build/index.js" type="module"></script>
+</body>
+</html>
