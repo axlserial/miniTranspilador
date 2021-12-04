@@ -6,10 +6,12 @@ Esta es una página web que traduce algunas instrucciones en ensamblador LEGv8 a
 
 [BULMA](https://bulma.io/) - El framework CSS utilizado para dar estilo a la página web
 
-## Autores ✒️
+## Autores
 
 * **Axel García** - [axlserial](https://github.com/axlserial)
+* **Margarita Elorza** - [Maggy30ev](https://github.com/Maggy30ev)
+* **Mario Ayala** - [MAARU20](https://github.com/MAARU20)
 
-## Licencia 📄
+## Licencia
 
 Este proyecto está bajo la Licencia MIT License - mira el archivo [LICENSE.md](LICENSE.md) para detalles
