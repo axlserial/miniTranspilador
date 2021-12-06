@@ -26,10 +26,10 @@ class GeneraInst {
 				this.enBinario += this.generarBinReg(inst.registros[1]);			//	registro Rn
 				this.enBinario += this.generarBinReg(inst.registros[0]);			//	registro Rd
 
-				instComentada = `\t\t-- ADD X${inst.registros[0]}, X${inst.registros[1]}, X${inst.registros[2]}`;		// representancion comentada de la instruccion
+				instComentada = `,\t\t-- ADD X${inst.registros[0]}, X${inst.registros[1]}, X${inst.registros[2]}`;		// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
-				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;					//	representacion en hex del numero
+				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
 
 				break;
 
@@ -41,10 +41,10 @@ class GeneraInst {
 				this.enBinario += this.generarBinReg(inst.registros[1]);			//	registro Rn
 				this.enBinario += this.generarBinReg(inst.registros[0]);			//	registro Rd
 
-				instComentada = `\t\t-- SUB X${inst.registros[0]}, X${inst.registros[1]}, X${inst.registros[2]}`;		// representancion comentada de la instruccion
+				instComentada = `,\t\t-- SUB X${inst.registros[0]}, X${inst.registros[1]}, X${inst.registros[2]}`;		// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
-				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;					//	representacion en hex del numero
+				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
 
 				break;
 
@@ -55,7 +55,7 @@ class GeneraInst {
 				this.enBinario += this.generarBinReg(inst.registros[1]);			//	registro Rn
 				this.enBinario += this.generarBinReg(inst.registros[0]);			//	registro Rd
 
-				instComentada = `\t\t-- ADDI X${inst.registros[0]}, X${inst.registros[1]}, ${inst.registros[2]}`;		// representancion comentada de la instruccion
+				instComentada = `,\t\t-- ADDI X${inst.registros[0]}, X${inst.registros[1]}, ${inst.registros[2]}`;		// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
 				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
@@ -69,7 +69,7 @@ class GeneraInst {
 				this.enBinario += this.generarBinReg(inst.registros[1]);			//	registro Rn
 				this.enBinario += this.generarBinReg(inst.registros[0]);			//	registro Rd
 
-				instComentada = `\t\t-- SUBI X${inst.registros[0]}, X${inst.registros[1]}, ${inst.registros[2]}`;		// representancion comentada de la instruccion
+				instComentada = `,\t\t-- SUBI X${inst.registros[0]}, X${inst.registros[1]}, ${inst.registros[2]}`;		// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
 				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
@@ -84,10 +84,10 @@ class GeneraInst {
 				this.enBinario += this.generarBinReg(inst.registros[1]);			//	registro Rn
 				this.enBinario += this.generarBinReg(inst.registros[0]);			//	registro Rt
 
-				instComentada = `\t\t-- LDUR X${inst.registros[0]}, [X${inst.registros[1]}, ${inst.registros[2]}]`;		// representancion comentada de la instruccion
+				instComentada = `,\t\t-- LDUR X${inst.registros[0]}, [X${inst.registros[1]}, ${inst.registros[2]}]`;		// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
-				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						// representacion en hex del numero
+				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;							// representacion en hex del numero
 
 				break;
 
@@ -99,10 +99,10 @@ class GeneraInst {
 				this.enBinario += this.generarBinReg(inst.registros[1]);			//	registro Rn
 				this.enBinario += this.generarBinReg(inst.registros[0]);			//	registro Rt
 
-				instComentada = `\t\t-- STUR X${inst.registros[0]}, [X${inst.registros[1]}, ${inst.registros[2]}]`;		// representancion comentada de la instruccion
+				instComentada = `,\t\t-- STUR X${inst.registros[0]}, [X${inst.registros[1]}, ${inst.registros[2]}]`;		// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
-				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
+				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;							//	representacion en hex del numero
 
 				break;
 
@@ -112,7 +112,7 @@ class GeneraInst {
 				this.enBinario += this.generaBinConstCZ(inst.registros[1]);			//	offset hacia donde saltar (address)
 				this.enBinario += this.generarBinReg(inst.registros[0]);			//	registro Rt
 
-				instComentada = `\t\t-- CBZ X${inst.registros[0]}, ${inst.registros[1]}`;								// representancion comentada de la instruccion
+				instComentada = `,\t\t-- CBZ X${inst.registros[0]}, ${inst.registros[1]}`;								// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
 				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
@@ -125,7 +125,7 @@ class GeneraInst {
 				this.enBinario += this.generaBinConstCZ(inst.registros[1]);			//	offset hacia donde saltar (address)
 				this.enBinario += this.generarBinReg(inst.registros[0]);			//	registro Rt
 
-				instComentada = `\t\t-- CBNZ X${inst.registros[0]}, ${inst.registros[1]}`;								// representancion comentada de la instruccion
+				instComentada = `,\t\t-- CBNZ X${inst.registros[0]}, ${inst.registros[1]}`;								// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
 				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
@@ -137,7 +137,7 @@ class GeneraInst {
 				this.enBinario = "000101";											//	codigo del B
 				this.enBinario += this.generaBinConstB(inst.registros[0]);			//	offset hacia donde saltar (address)
 
-				instComentada = `\t\t-- B ${inst.registros[0]}`;														// representancion comentada de la instruccion
+				instComentada = `,\t\t-- B ${inst.registros[0]}`;														// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
 				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
@@ -149,7 +149,7 @@ class GeneraInst {
 				this.enBinario = "100101";											//	codigo del BL
 				this.enBinario += this.generaBinConstB(inst.registros[0]);			//	offset hacia donde saltar (address)
 
-				instComentada = `\t\t-- BL ${inst.registros[0]}`;														// representancion comentada de la instruccion
+				instComentada = `,\t\t-- BL ${inst.registros[0]}`;														// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
 				this.enHex = 'X"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
@@ -162,7 +162,7 @@ class GeneraInst {
 				this.enBinario += "0000000000000000";								//	todo lo intermedio puras 0's
 				this.enBinario += this.generarBinReg(inst.registros[0]);			//	registro a leer Rd
 
-				instComentada = `\t\t-- BR X${inst.registros[0]}`;														// representancion comentada de la instruccion
+				instComentada = `,\t\t-- BR X${inst.registros[0]}`;														// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
 				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
