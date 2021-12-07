@@ -45,11 +45,17 @@ class NormalizaInst {
         for (let i = 0; i < this.instOriginales.length; i++) {
             let tipoBranch = this.esBranch(this.instOriginales[i]);
             if (tipoBranch > 0) {
+                let instOriginal = [...this.instOriginales][i];
+                let instPartida = instOriginal.split(" ");
+                if (instPartida[0].includes(":")) {
+                    instPartida.shift();
+                    instOriginal = instPartida.join(" ");
+                }
                 let et;
                 switch (tipoBranch) {
                     case 1:
                     case 2:
-                        et = this.instOriginales[i].split(" ");
+                        et = instOriginal.split(" ");
                         this.saltos.push({
                             numLinea: i,
                             inst: et[0],
@@ -58,7 +64,7 @@ class NormalizaInst {
                         break;
                     case 3:
                     case 4:
-                        et = this.instOriginales[i].split(" ");
+                        et = instOriginal.split(" ");
                         this.saltos.push({
                             numLinea: i,
                             inst: et[0],
@@ -70,7 +76,14 @@ class NormalizaInst {
         }
     }
     esBranch(linea) {
-        let ins = linea.split(" ")[0];
+        let instPartida = linea.split(" ");
+        let ins;
+        if (instPartida[0].includes(":")) {
+            ins = instPartida[1];
+        }
+        else {
+            ins = instPartida[0];
+        }
         let tipoBranch;
         switch (ins) {
             case "CBZ":

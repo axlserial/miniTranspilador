@@ -76,12 +76,19 @@ class NormalizaInst {
 			let tipoBranch = this.esBranch(this.instOriginales[i]);
 			if (tipoBranch > 0){
 
-				let et: string[];
+				let instOriginal = [...this.instOriginales][i];
 
+				let instPartida = instOriginal.split(" ");
+				if (instPartida[0].includes(":")){
+					instPartida.shift();
+					instOriginal = instPartida.join(" ");
+				}
+
+				let et: string[];
 				switch (tipoBranch) {
 					case 1:
 					case 2:
-						et = this.instOriginales[i].split(" ");
+						et = instOriginal.split(" ");
 						this.saltos.push({
 							numLinea: i,
 							inst: et[0],
@@ -91,7 +98,7 @@ class NormalizaInst {
 
 					case 3:
 					case 4:
-						et = this.instOriginales[i].split(" ");
+						et = instOriginal.split(" ");
 						this.saltos.push({
 							numLinea: i,
 							inst: et[0],
@@ -104,9 +111,16 @@ class NormalizaInst {
 	}
 
 	private esBranch(linea: string): number {
-		let ins: string = linea.split(" ")[0];
-		let tipoBranch: number;
+		let instPartida = linea.split(" ");
+		let ins: string;
 
+		if (instPartida[0].includes(":")){
+			ins = instPartida[1];
+		} else {
+			ins = instPartida[0];
+		}
+
+		let tipoBranch: number;		
 		switch (ins) {
 			case "CBZ":
 				tipoBranch = 1;
@@ -139,6 +153,7 @@ class NormalizaInst {
 
 		for (let i = 0; i < this.instOriginales.length; i++){
 			if (this.instOriginales[i].includes(":")){
+
 				etiTemp = this.instOriginales[i].split(" ");
 
 				// obtiene etiqueta

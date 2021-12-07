@@ -8,7 +8,6 @@ export default class ObtieneInst {
         this.boton.onclick = () => {
             if (this.entrada.value !== '') {
                 lineas = this.entrada.value.split("\n");
-                console.log("lineas:", lineas);
                 callback(lineas);
             }
         };
