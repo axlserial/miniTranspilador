@@ -120,7 +120,12 @@ class GeneraInst {
     }
     // Genera el numero binario para la constante de ADDI/SUBI
     generaBinConstAS(num) {
-        let bin = Array.from(parseInt(num, 10).toString(2));
+        let numero = parseInt(num, 10) >= 0 ? parseInt(num, 10) : parseInt(num, 10) >>> 0;
+        let bin = Array.from(numero.toString(2));
+        // ajusta la cantidad de bits a 12 si es negativo
+        if (bin.length === 32) {
+            bin.splice(0, 20);
+        }
         if (bin.length < 12) {
             while (bin.length < 12) {
                 bin.unshift("0");
