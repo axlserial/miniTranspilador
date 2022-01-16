@@ -152,7 +152,7 @@ class GeneraInst {
 				instComentada = `,\t\t-- BL ${inst.registros[0]}`;														// representancion comentada de la instruccion
 
 				this.enBinario += instComentada;
-				this.enHex = 'X"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
+				this.enHex = 'x"' + parseInt(this.enBinario, 2).toString(16) + '"' + instComentada;						//	representacion en hex del numero
 
 				break;
 
